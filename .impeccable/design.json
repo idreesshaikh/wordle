@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T11:50:16Z",
+  "title": "Design System: Wordle",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chalk Paper",
+        "canonical": "#f2f3ee",
+        "tonalRamp": [
+          "#2a2d20",
+          "#4c5139",
+          "#6e7552",
+          "#8f986d",
+          "#a8af8d",
+          "#c4c8b1",
+          "#dfe1d5",
+          "#f4f4f0"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Proof Surface",
+        "canonical": "#fbfbf7",
+        "tonalRamp": [
+          "#33331a",
+          "#5c5c2e",
+          "#858542",
+          "#acac58",
+          "#bebe7e",
+          "#d3d3a7",
+          "#e7e7cf",
+          "#f6f6ee"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Proof",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#282525",
+          "#484242",
+          "#675f5f",
+          "#877d7d",
+          "#a29a9a",
+          "#bfbaba",
+          "#dddada",
+          "#f3f2f2"
+        ]
+      },
+      "surface-muted": {
+        "role": "neutral",
+        "displayName": "Newsprint Shadow",
+        "canonical": "#e7e9e2",
+        "tonalRamp": [
+          "#292b21",
+          "#494e3b",
+          "#697156",
+          "#899371",
+          "#a4ab91",
+          "#c1c6b4",
+          "#dde0d6",
+          "#f3f4f0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Press Black",
+        "canonical": "#161815",
+        "tonalRamp": [
+          "#252924",
+          "#434940",
+          "#616a5d",
+          "#7f8a7a",
+          "#9ca598",
+          "#bbc1b8",
+          "#dbded9",
+          "#f2f3f1"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "News Ink",
+        "canonical": "#596159",
+        "tonalRamp": [
+          "#252825",
+          "#424842",
+          "#5f685f",
+          "#7d877d",
+          "#9aa29a",
+          "#bac0ba",
+          "#daddda",
+          "#f2f3f2"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Faint Marginalia",
+        "canonical": "#686f67",
+        "tonalRamp": [
+          "#252825",
+          "#434842",
+          "#60675f",
+          "#7e877d",
+          "#9ba29a",
+          "#bbbfba",
+          "#daddda",
+          "#f2f3f2"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ruled Line",
+        "canonical": "#c8ccc3",
+        "tonalRamp": [
+          "#272923",
+          "#454a3f",
+          "#646c5b",
+          "#838c78",
+          "#9fa696",
+          "#bdc2b7",
+          "#dcded8",
+          "#f2f3f1"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Dark Rule",
+        "canonical": "#7e867d",
+        "tonalRamp": [
+          "#252825",
+          "#434842",
+          "#60675f",
+          "#7e877d",
+          "#9ba29a",
+          "#bbbfba",
+          "#daddda",
+          "#f2f3f2"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Field Green",
+        "canonical": "#3f7d4e",
+        "tonalRamp": [
+          "#1a3320",
+          "#2e5c39",
+          "#438453",
+          "#59ab6d",
+          "#7ebe8e",
+          "#a7d3b1",
+          "#d0e7d5",
+          "#eef6f0"
+        ]
+      },
+      "accent-edge": {
+        "role": "secondary",
+        "displayName": "Deep Field",
+        "canonical": "#2f633c",
+        "tonalRamp": [
+          "#19341f",
+          "#2c5d39",
+          "#408752",
+          "#56af6c",
+          "#7cc18d",
+          "#a5d4b1",
+          "#cfe8d5",
+          "#eef7f0"
+        ]
+      },
+      "present": {
+        "role": "secondary",
+        "displayName": "Ochre",
+        "canonical": "#b8862f",
+        "tonalRamp": [
+          "#3d2c10",
+          "#6e501c",
+          "#9e7328",
+          "#cc9638",
+          "#d8ae65",
+          "#e4c795",
+          "#f0e1c6",
+          "#faf4eb"
+        ]
+      },
+      "present-edge": {
+        "role": "secondary",
+        "displayName": "Burnt Ochre",
+        "canonical": "#8d6620",
+        "tonalRamp": [
+          "#3e2d0e",
+          "#705119",
+          "#a27525",
+          "#d19833",
+          "#dbaf61",
+          "#e6c993",
+          "#f2e2c5",
+          "#faf5ea"
+        ]
+      },
+      "absent": {
+        "role": "tertiary",
+        "displayName": "Slate Mark",
+        "canonical": "#666d66",
+        "tonalRamp": [
+          "#252825",
+          "#424842",
+          "#5f675f",
+          "#7d877d",
+          "#9aa29a",
+          "#babfba",
+          "#daddda",
+          "#f2f3f2"
+        ]
+      },
+      "absent-edge": {
+        "role": "tertiary",
+        "displayName": "Deep Slate",
+        "canonical": "#4e544e",
+        "tonalRamp": [
+          "#252825",
+          "#424842",
+          "#5f675f",
+          "#7d877d",
+          "#9aa29a",
+          "#babfba",
+          "#daddda",
+          "#f2f3f2"
+        ]
+      },
+      "key-bg": {
+        "role": "neutral",
+        "displayName": "Keycap Paper",
+        "canonical": "#dfe2db",
+        "tonalRamp": [
+          "#272a22",
+          "#464c3d",
+          "#656e59",
+          "#849075",
+          "#a0a994",
+          "#bec4b6",
+          "#dcdfd7",
+          "#f2f4f1"
+        ]
+      },
+      "key-edge": {
+        "role": "neutral",
+        "displayName": "Keycap Edge",
+        "canonical": "#b7bcb3",
+        "tonalRamp": [
+          "#262924",
+          "#444941",
+          "#636a5d",
+          "#818a7a",
+          "#9da498",
+          "#bcc1b9",
+          "#dbded9",
+          "#f2f3f1"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Proof Blue",
+        "canonical": "#2f6f9f",
+        "tonalRamp": [
+          "#11293b",
+          "#1f4a6a",
+          "#2d6b9a",
+          "#3e8cc6",
+          "#69a6d3",
+          "#99c2e1",
+          "#c8deef",
+          "#ebf3f9"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Correction Red",
+        "canonical": "#9d3d2f",
+        "tonalRamp": [
+          "#3b1712",
+          "#6a2920",
+          "#993b2e",
+          "#c5503f",
+          "#d2776a",
+          "#e0a299",
+          "#efcdc8",
+          "#f9edeb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "brand": {
+        "displayName": "Masthead",
+        "purpose": "Wordmark only."
+      },
+      "display": {
+        "displayName": "Dialog Display",
+        "purpose": "Short dialog and result headings."
+      },
+      "headline": {
+        "displayName": "Lead",
+        "purpose": "Help lead and result answer line."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy and page baseline."
+      },
+      "label": {
+        "displayName": "Chrome Label",
+        "purpose": "Dateline, footer, and small metadata labels."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Buttons, keys, and compact controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "modal-lift",
+        "value": "0 22px 60px rgba(16,20,16,0.16), 0 3px 10px rgba(16,20,16,0.08)",
+        "purpose": "Dialog and result cards only."
+      },
+      {
+        "name": "toast-lift",
+        "value": "0 12px 30px rgba(16,20,16,0.2)",
+        "purpose": "Transient status message."
+      },
+      {
+        "name": "keycap-edge",
+        "value": "0 2px 0 var(--key-edge)",
+        "purpose": "Physical bottom edge under each keyboard key."
+      },
+      {
+        "name": "switch-thumb",
+        "value": "0 1px 2px rgba(16,20,16,0.16)",
+        "purpose": "Mode-switch thumb lift."
+      }
+    ],
+    "motion": [
+      {
+        "name": "editorial-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default opening and settling motion."
+      },
+      {
+        "name": "tile-flip",
+        "value": "460ms",
+        "purpose": "Board reveal, staggered 88ms per tile."
+      },
+      {
+        "name": "row-shake",
+        "value": "340ms cubic-bezier(0.36, 0.07, 0.19, 0.97)",
+        "purpose": "Invalid guess feedback."
+      },
+      {
+        "name": "tile-pop",
+        "value": "540ms",
+        "purpose": "Winning row celebration."
+      },
+      {
+        "name": "modal-in",
+        "value": "250ms",
+        "purpose": "Dialog card arrival."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "720px"
+      },
+      {
+        "name": "compact-phone",
+        "value": "430px"
+      },
+      {
+        "name": "short-height",
+        "value": "820px"
+      },
+      {
+        "name": "shorter-height",
+        "value": "740px"
+      },
+      {
+        "name": "shortest-height",
+        "value": "620px"
+      },
+      {
+        "name": "landscape-phone",
+        "value": "max-height: 560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Commit action on paper: Press Black fill with Chalk Paper type.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">\n  <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"8\" y=\"8\" width=\"11\" height=\"11\" rx=\"2\"/><path d=\"M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2\"/></svg>\n  Copy result\n</button>",
+      "css": ".ds-btn-primary {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  min-height: 44px;\n  padding: 0 16px;\n  border: 1px solid var(--ink, #161815);\n  border-radius: 6px;\n  background: var(--ink, #161815);\n  color: var(--paper, #f2f3ee);\n  cursor: pointer;\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 12.5px;\n  font-weight: 680;\n  letter-spacing: 0.015em;\n  line-height: 1.2;\n  transition: background-color 160ms ease, transform 160ms ease;\n}\n.ds-btn-primary:hover { background: #2e312c; }\n.ds-btn-primary:active { transform: translateY(1px); }\n.ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }\n.ds-btn-primary svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.65; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Reversible action on a dialog: Proof Surface with a Dark Rule outline.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Statistics</button>",
+      "css": ".ds-btn-secondary {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 44px;\n  padding: 0 16px;\n  border: 1px solid var(--rule-strong, #7e867d);\n  border-radius: 6px;\n  background: var(--surface, #fbfbf7);\n  color: var(--ink, #161815);\n  cursor: pointer;\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 12.5px;\n  font-weight: 680;\n  letter-spacing: 0.015em;\n  line-height: 1.2;\n  transition: background-color 160ms ease, transform 160ms ease;\n}\n.ds-btn-secondary:hover { background: var(--surface-muted, #e7e9e2); }\n.ds-btn-secondary:active { transform: translateY(1px); }\n.ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "44px chrome control with a 20px authored line icon.",
+      "html": "<button class=\"ds-icon-button\" type=\"button\" aria-label=\"How to play\">\n  <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.4 9.1a2.7 2.7 0 1 1 4.4 2.1c-.9.7-1.8 1.2-1.8 2.4\"/><circle cx=\"12\" cy=\"17\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/></svg>\n</button>",
+      "css": ".ds-icon-button {\n  display: inline-grid;\n  place-items: center;\n  width: 44px;\n  height: 44px;\n  padding: 0;\n  border: 0;\n  border-radius: 7px;\n  background: transparent;\n  color: var(--ink, #161815);\n  cursor: pointer;\n  transition: background-color 160ms ease, transform 160ms ease;\n}\n.ds-icon-button:hover { background: var(--surface-muted, #e7e9e2); }\n.ds-icon-button:active { transform: translateY(1px); }\n.ds-icon-button:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }\n.ds-icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.65; }"
+    },
+    {
+      "name": "Mode Switch",
+      "kind": "nav",
+      "refersTo": "mode-switch",
+      "description": "Two-state control with a solid thumb; Daily active.",
+      "html": "<div class=\"ds-mode-switch\" role=\"group\" aria-label=\"Game mode\">\n  <span class=\"ds-mode-switch__thumb\" aria-hidden=\"true\"></span>\n  <button class=\"ds-mode-switch__button is-active\" type=\"button\" aria-pressed=\"true\">Daily</button>\n  <button class=\"ds-mode-switch__button\" type=\"button\" aria-pressed=\"false\">Practice</button>\n</div>",
+      "css": ".ds-mode-switch {\n  position: relative;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  width: 188px;\n  padding: 3px;\n  border: 1px solid var(--rule, #c8ccc3);\n  border-radius: 8px;\n  background: var(--surface-muted, #e7e9e2);\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n}\n.ds-mode-switch__thumb {\n  position: absolute;\n  z-index: 0;\n  top: 3px;\n  bottom: 3px;\n  left: 3px;\n  width: calc(50% - 3px);\n  border-radius: 5px;\n  background: var(--ink, #161815);\n  box-shadow: 0 1px 2px rgba(16, 20, 16, 0.16);\n  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);\n}\n.ds-mode-switch[data-active=\"practice\"] .ds-mode-switch__thumb { transform: translateX(100%); }\n.ds-mode-switch__button {\n  position: relative;\n  z-index: 1;\n  min-height: 38px;\n  padding: 0 8px;\n  border: 0;\n  border-radius: 5px;\n  background: transparent;\n  color: var(--ink-soft, #596159);\n  cursor: pointer;\n  font-family: inherit;\n  font-size: 10.5px;\n  font-weight: 700;\n  letter-spacing: 0.11em;\n  text-transform: uppercase;\n}\n.ds-mode-switch__button.is-active { color: var(--switch-active-ink, #f2f3ee); }\n.ds-mode-switch__button:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 1px; }"
+    },
+    {
+      "name": "Board Row",
+      "kind": "custom",
+      "refersTo": "tile-empty",
+      "description": "Five 2px-bordered tiles showing the three game states; CRANE example.",
+      "html": "<div class=\"ds-board-row\" role=\"img\" aria-label=\"CRANE: C absent, R present in another position, A absent, N present in another position, E present in another position\">\n  <span class=\"ds-tile ds-tile--absent\">C</span>\n  <span class=\"ds-tile ds-tile--present\">R</span>\n  <span class=\"ds-tile ds-tile--absent\">A</span>\n  <span class=\"ds-tile ds-tile--present\">N</span>\n  <span class=\"ds-tile ds-tile--present\">E</span>\n</div>",
+      "css": ".ds-board-row {\n  display: grid;\n  grid-template-columns: repeat(5, 58px);\n  gap: 7px;\n}\n.ds-tile {\n  display: grid;\n  place-items: center;\n  aspect-ratio: 1;\n  border: 2px solid var(--tile-border, #8b9388);\n  border-radius: 6px;\n  background: var(--surface, #fbfbf7);\n  color: var(--ink, #161815);\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 22px;\n  font-weight: 720;\n  line-height: 1;\n  text-transform: uppercase;\n}\n.ds-tile--correct { border-color: var(--accent, #3f7d4e); background: var(--accent, #3f7d4e); color: var(--accent-ink, #ffffff); }\n.ds-tile--present { border-color: var(--present, #b8862f); background: var(--present, #b8862f); color: var(--present-ink, #181207); }\n.ds-tile--absent { border-color: var(--absent, #666d66); background: var(--absent, #666d66); color: var(--absent-ink, #ffffff); }"
+    },
+    {
+      "name": "Keyboard Key",
+      "kind": "button",
+      "refersTo": "key-default",
+      "description": "Keycap with a 2px bottom edge; correct state keeps the same physical depth.",
+      "html": "<button class=\"ds-key ds-key--correct\" type=\"button\" aria-label=\"e correct\">E</button>",
+      "css": ".ds-key {\n  width: 44px;\n  height: 44px;\n  padding: 0;\n  border: 0;\n  border-radius: 6px;\n  background: var(--key-bg, #dfe2db);\n  box-shadow: 0 2px 0 var(--key-edge, #b7bcb3);\n  color: var(--ink, #161815);\n  cursor: pointer;\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 13px;\n  font-weight: 690;\n  line-height: 1;\n  text-transform: uppercase;\n  transition: background-color 160ms ease, box-shadow 80ms ease, transform 80ms ease;\n}\n.ds-key:hover { background: #d5d8d1; }\n.ds-key:active { box-shadow: none; transform: translateY(2px); }\n.ds-key:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }\n.ds-key--correct { background: var(--accent, #3f7d4e); box-shadow: 0 2px 0 var(--accent-edge, #2f633c); color: var(--accent-ink, #ffffff); }\n.ds-key--correct:hover { background: var(--accent, #3f7d4e); filter: brightness(1.05); }\n.ds-key--present { background: var(--present, #b8862f); box-shadow: 0 2px 0 var(--present-edge, #8d6620); color: var(--present-ink, #181207); }\n.ds-key--absent { background: var(--absent, #666d66); box-shadow: 0 2px 0 var(--absent-edge, #4e544e); color: var(--absent-ink, #ffffff); }"
+    },
+    {
+      "name": "Result Slip",
+      "kind": "card",
+      "refersTo": "modal-card",
+      "description": "Perforated receipt dialog with result metadata, grid, copy action, and stats link.",
+      "html": "<section class=\"ds-receipt\" aria-label=\"Result\">\n  <div class=\"ds-receipt__perf\" aria-hidden=\"true\"></div>\n  <div class=\"ds-receipt__head\">\n    <h2 class=\"ds-receipt__title\">Solved in 2</h2>\n    <button class=\"ds-receipt__close\" type=\"button\" aria-label=\"Close result\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 6 12 12M18 6 6 18\"/></svg></button>\n  </div>\n  <p class=\"ds-receipt__meta\">Daily No. 329 · Nov 25, 2026</p>\n  <div class=\"ds-receipt__grid\" aria-hidden=\"true\">\n    <span class=\"ds-cell ds-cell--absent\"></span><span class=\"ds-cell ds-cell--absent\"></span><span class=\"ds-cell ds-cell--absent\"></span><span class=\"ds-cell ds-cell--present\"></span><span class=\"ds-cell ds-cell--absent\"></span>\n    <span class=\"ds-cell ds-cell--correct\"></span><span class=\"ds-cell ds-cell--correct\"></span><span class=\"ds-cell ds-cell--correct\"></span><span class=\"ds-cell ds-cell--correct\"></span><span class=\"ds-cell ds-cell--correct\"></span>\n  </div>\n  <p class=\"ds-receipt__note\">No letters. Safe to share.</p>\n  <div class=\"ds-receipt__actions\">\n    <button class=\"ds-receipt__primary\" type=\"button\">Copy result</button>\n    <button class=\"ds-receipt__secondary\" type=\"button\">Statistics</button>\n  </div>\n  <div class=\"ds-receipt__perf\" aria-hidden=\"true\"></div>\n</section>",
+      "css": ".ds-receipt {\n  width: min(100%, 410px);\n  padding: 23px;\n  border: 1px solid var(--rule-strong, #7e867d);\n  border-radius: 13px;\n  background: var(--surface, #fbfbf7);\n  box-shadow: 0 22px 60px rgba(16, 20, 16, 0.16), 0 3px 10px rgba(16, 20, 16, 0.08);\n  color: var(--ink, #161815);\n  font-family: \"Archivo\", \"Avenir Next\", \"Segoe UI\", system-ui, sans-serif;\n}\n.ds-receipt__perf { border-top: 1px dashed var(--rule-strong, #7e867d); margin: 0 -23px 17px; }\n.ds-receipt__perf:last-child { margin: 17px -23px 0; }\n.ds-receipt__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }\n.ds-receipt__title { margin: 0; font-size: 26px; font-weight: 780; letter-spacing: -0.035em; line-height: 1.08; }\n.ds-receipt__close { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 7px; background: transparent; color: inherit; cursor: pointer; } .ds-receipt__close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.65; }\n.ds-receipt__close:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }\n.ds-receipt__meta { margin: 8px 0 6px; color: var(--ink-faint, #686f67); font-size: 9.5px; font-weight: 650; letter-spacing: 0.11em; text-transform: uppercase; }\n.ds-receipt__grid { display: grid; grid-template-columns: repeat(5, 18px); justify-content: center; gap: 4px; padding: 13px 0 4px; }\n.ds-cell { width: 18px; height: 18px; border-radius: 2px; background: var(--absent, #666d66); }\n.ds-cell--correct { background: var(--accent, #3f7d4e); }\n.ds-cell--present { background: var(--present, #b8862f); }\n.ds-receipt__note { margin: 5px 0 15px; color: var(--ink-faint, #686f67); font-size: 9.5px; font-weight: 620; letter-spacing: 0.1em; line-height: 1.5; text-align: center; text-transform: uppercase; }\n.ds-receipt__actions { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px; }\n.ds-receipt__primary, .ds-receipt__secondary { min-height: 44px; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 680; }\n.ds-receipt__primary { border: 1px solid var(--ink, #161815); background: var(--ink, #161815); color: var(--paper, #f2f3ee); }\n.ds-receipt__secondary { border: 1px solid var(--rule-strong, #7e867d); background: var(--surface, #fbfbf7); color: var(--ink, #161815); }\n.ds-receipt__primary:focus-visible, .ds-receipt__secondary:focus-visible { outline: 2px solid var(--focus, #2f6f9f); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A puzzle page torn from a well-made daily paper",
+    "overview": "Wordle is presented as a single printed page, not an app dashboard. The board is the front-page story; the dateline, rules, registration frame, and keycap keyboard behave like the printer's furniture around it. The interface is deliberately quiet because the six guesses are the content. Familiar Wordle mechanics meet an editorial surface: chalk-white paper with a faint dot field, ink-black rules, and a small, meaningful color vocabulary.\n\nThe system is light by default and has a complete dark remap; both keep the same semantic roles rather than swapping in a different brand. A high-contrast setting replaces the green/ochre success pair with blue/orange while preserving the same tile geometry and text/state labels. The page should remain legible as a black-and-white printout: shape, border, and copy carry meaning before color does.",
+    "keyCharacteristics": [
+      "The six-by-five grid is the focal point; chrome stays secondary.",
+      "Print grammar: crop marks, hairlines, dotted paper, uppercase metadata, perforated receipt.",
+      "One material gesture: a keycap edge, not a generic shadow system.",
+      "Restrained motion: clears, flips, a short shake, and a result slip that rises.",
+      "Independent surface: no NYT logos, screenshots, typefaces, or interface assets."
+    ],
+    "rules": [
+      {
+        "name": "The Signal-Only Color Rule",
+        "body": "Green, ochre, and slate appear only where they describe game state, the selected mode, or the brand's four-tile mark. Never use them as ambient section tints, decorative bars, or \"success\" decoration around ordinary copy.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Color-Only Rule",
+        "body": "Every state also carries a border, position, label, or accessible text. A player who cannot distinguish the three fills must still be able to play.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Register Rule",
+        "body": "Sentence-case, normal tracking for reading; uppercase, tracked-out type for chrome. If a line is uppercase and larger than 11px, it needs a reason beyond styling.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tile-Face Rule",
+        "body": "The board is the only place where large letters are centered in cells. Do not turn headings into tile-like blocks or use game colors behind type.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-Page Rule",
+        "body": "Surfaces are flat at rest. If an element is not a dialog, a toast, a keycap, or the moving switch thumb, it does not get a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Print-Not-Product Rule",
+        "body": "Corners stay small and purposeful. Do not round the board, keyboard, or page into pill shapes, and do not replace hairlines with thick dividers or cards.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep the board as the largest, most contrasted object in the first viewport.",
+      "Do use 2px tile borders, 6px tile radii, 7px gaps, and a visible rule above the keyboard.",
+      "Do reserve green, ochre, and slate for game state; keep ordinary chrome ink, paper, and rule tones.",
+      "Do set metadata in tracked uppercase at 9.5–11px and body copy in sentence case.",
+      "Do use the keycap edge, the dashed receipt, and the crop-mark frame as the page's material signature.",
+      "Do preserve 44px primary touch targets, visible focus, and reduced-motion parity.",
+      "Do keep the \"Not affiliated with The New York Times\" statement visible in Help and the footer."
+    ],
+    "donts": [
+      "Don't turn the page into a dashboard: no stat cards, chart panels, or hero-metric blocks outside the existing Stats dialog.",
+      "Don't use gradients, glass, blur, or colored ambient sections; the dot field and flat ink veil are the only atmospheric treatments.",
+      "Don't add drop shadows to tiles, keys, headers, or sections; only dialogs, toasts, keycaps, and the switch thumb lift.",
+      "Don't use green or ochre as decorative success/notification colors, and never rely on color alone for game state.",
+      "Don't use emoji, icon fonts, or a system display face as the brand voice.",
+      "Don't use oversized pill radii, thick card borders, or hard offset decoration; the only pill is the 46×28px switch.",
+      "Don't copy NYT logos, typefaces, screenshots, or interface assets into this surface."
+    ]
+  }
+}

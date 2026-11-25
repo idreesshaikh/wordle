@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wordle — a daily five-letter puzzle</title>
+    <meta
+      name="description"
+      content="An independent daily five-letter word puzzle. Six guesses, honest feedback, no account required."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f2f3ee" id="theme-color-meta" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="./assets/fonts/archivo-latin-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="page-frame" aria-hidden="true"></div>
+    <div class="registration-marks" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <a class="skip-link" href="#board">Skip to the game board</a>
+
+    <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-help" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M9.4 9.1a2.7 2.7 0 1 1 4.4 2.1c-.9.7-1.8 1.2-1.8 2.4" />
+        <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="icon-stats" viewBox="0 0 24 24">
+        <path d="M5 19v-6M12 19V5M19 19V9" />
+      </symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24">
+        <path d="M4 7h9M17 7h3M4 17h3M11 17h9" />
+        <circle cx="15" cy="7" r="2" />
+        <circle cx="9" cy="17" r="2" />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="11" height="11" rx="2" />
+        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6" />
+      </symbol>
+      <symbol id="icon-backspace" viewBox="0 0 24 24">
+        <path d="M21 6H9l-6 6 6 6h12a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Z" />
+        <path d="m17 9-5 6M12 9l5 6" />
+      </symbol>
+    </svg>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Wordle home">
+          <span class="brand__mark" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </span>
+          <span class="brand__word">Wordle</span>
+        </a>
+
+        <div class="mode-switch" role="group" aria-label="Game mode">
+          <span class="mode-switch__thumb" aria-hidden="true"></span>
+          <button
+            class="mode-switch__button is-active"
+            type="button"
+            data-mode="daily"
+            aria-pressed="true"
+          >
+            Daily
+          </button>
+          <button
+            class="mode-switch__button"
+            type="button"
+            data-mode="practice"
+            aria-pressed="false"
+          >
+            Practice
+          </button>
+        </div>
+
+        <div class="header-actions">
+          <button
+            class="icon-button"
+            type="button"
+            data-open-dialog="help-dialog"
+            aria-label="How to play"
+            aria-haspopup="dialog"
+            title="How to play"
+          >
+            <svg class="icon"><use href="#icon-help"></use></svg>
+          </button>
+          <button
+            class="icon-button"
+            type="button"
+            data-open-dialog="stats-dialog"
+            aria-label="Statistics"
+            aria-haspopup="dialog"
+            title="Statistics"
+          >
+            <svg class="icon"><use href="#icon-stats"></use></svg>
+          </button>
+          <button
+            class="icon-button"
+            type="button"
+            data-open-dialog="settings-dialog"
+            aria-label="Settings"
+            aria-haspopup="dialog"
+            title="Settings"
+          >
+            <svg class="icon"><use href="#icon-settings"></use></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="game" id="game" aria-describedby="game-instructions">
+        <h1 class="visually-hidden">Wordle: a daily five-letter word puzzle</h1>
+        <p class="visually-hidden" id="game-instructions">
+          Guess the hidden five-letter word in six tries. Use your keyboard or the
+          on-screen keyboard. Press Enter to submit a guess and Backspace to delete a
+          letter.
+        </p>
+
+        <div class="game-meta" aria-live="off">
+          <p class="game-meta__date" id="puzzle-date"></p>
+          <p class="game-meta__number" id="puzzle-number"></p>
+        </div>
+
+        <div class="game-stage">
+          <div
+            class="board"
+            id="board"
+            role="group"
+            aria-label="Wordle board"
+            tabindex="-1"
+          ></div>
+
+          <div class="result-strip" id="result-strip" hidden>
+            <span id="result-strip-text"></span>
+            <button class="text-button" type="button" id="open-result">
+              View result
+            </button>
+          </div>
+
+          <p class="visually-hidden" id="game-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="keyboard-zone">
+          <div
+            class="keyboard"
+            id="keyboard"
+            role="group"
+            aria-label="On-screen keyboard"
+          ></div>
+          <p class="keyboard-note" id="keyboard-note">A new word at midnight.</p>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <p class="site-footer__left">An independent daily word game.</p>
+        <p class="site-footer__right">
+          Not affiliated with The New York Times.
+        </p>
+        <p class="site-footer__links">
+          <button
+            class="link-button"
+            type="button"
+            data-open-dialog="help-dialog"
+          >
+            How to play
+          </button>
+          <span aria-hidden="true">/</span>
+          <a href="./docs/reverse-engineering.md">Build notes</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog class="modal" id="help-dialog" aria-labelledby="help-title">
+      <div class="modal__card">
+        <div class="modal__head">
+          <h2 class="modal__title" id="help-title">How to play</h2>
+          <button
+            class="icon-button"
+            type="button"
+            data-close-dialog
+            aria-label="Close how to play"
+          >
+            <svg class="icon"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+
+        <p class="lead">Guess the hidden word in six tries.</p>
+        <p>
+          Every guess must be a valid five-letter word. Press Enter to submit. The
+          tiles change after each guess to show how close you were.
+        </p>
+
+        <div class="example">
+          <div
+            class="mini-row"
+            role="img"
+            aria-label="CRANE: C absent, R present in another position, A absent, N present in another position, E present in another position"
+          >
+            <span class="mini-tile" data-state="absent" aria-hidden="true">C</span>
+            <span class="mini-tile" data-state="present" aria-hidden="true">R</span>
+            <span class="mini-tile" data-state="absent" aria-hidden="true">A</span>
+            <span class="mini-tile" data-state="present" aria-hidden="true">N</span>
+            <span class="mini-tile" data-state="present" aria-hidden="true">E</span>
+          </div>
+          <p class="example__copy">
+            <strong>R</strong>, <strong>N</strong>, and <strong>E</strong> are in
+            the word but in different spots. <strong>C</strong> and
+            <strong>A</strong> are not.
+          </p>
+        </div>
+
+        <ul class="legend" aria-label="Tile color key">
+          <li>
+            <span class="mini-tile" data-state="correct" aria-hidden="true">A</span>
+            <span><strong>Right spot</strong> — the letter is in the right place.</span>
+          </li>
+          <li>
+            <span class="mini-tile" data-state="present" aria-hidden="true">B</span>
+            <span><strong>Wrong spot</strong> — the letter is in the word elsewhere.</span>
+          </li>
+          <li>
+            <span class="mini-tile" data-state="absent" aria-hidden="true">C</span>
+            <span><strong>Not in the word</strong> — the letter does not appear.</span>
+          </li>
+        </ul>
+
+        <p class="note">
+          Each letter in the answer is claimed at most once. Repeated letters can
+          turn gray even when the letter appears elsewhere.
+        </p>
+        <p>
+          A fresh daily puzzle arrives at local midnight. Practice rounds are
+          unlimited and never touch your daily stats.
+        </p>
+
+        <button class="button button--primary button--wide" type="button" data-close-dialog>
+          Let’s play
+        </button>
+
+        <p class="disclaimer">
+          An independent clone. Not affiliated with The New York Times.
+        </p>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="stats-dialog" aria-labelledby="stats-title">
+      <div class="modal__card">
+        <div class="modal__head">
+          <div>
+            <h2 class="modal__title" id="stats-title">Statistics</h2>
+            <p class="modal__sub">Daily puzzles only.</p>
+          </div>
+          <button
+            class="icon-button"
+            type="button"
+            data-close-dialog
+            aria-label="Close statistics"
+          >
+            <svg class="icon"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat__value" id="stat-played">0</span>
+            <span class="stat__label">Played</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-win-rate">0%</span>
+            <span class="stat__label">Win rate</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-streak">0</span>
+            <span class="stat__label">Current streak</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-max-streak">0</span>
+            <span class="stat__label">Max streak</span>
+          </div>
+        </div>
+
+        <section class="distribution" aria-labelledby="distribution-title">
+          <h3 class="distribution__title" id="distribution-title">Guess distribution</h3>
+          <ol class="distribution__list" id="distribution-list"></ol>
+          <p class="empty-note" id="distribution-empty" hidden>
+            Your first completed daily puzzle will start this chart.
+          </p>
+        </section>
+
+        <div class="countdown" id="stats-countdown-wrap">
+          <span>Next daily puzzle in</span>
+          <strong id="stats-countdown">--:--:--</strong>
+        </div>
+
+        <button
+          class="button button--primary button--wide"
+          type="button"
+          data-close-dialog
+        >
+          Done
+        </button>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="settings-dialog" aria-labelledby="settings-title">
+      <div class="modal__card">
+        <div class="modal__head">
+          <h2 class="modal__title" id="settings-title">Settings</h2>
+          <button
+            class="icon-button"
+            type="button"
+            data-close-dialog
+            aria-label="Close settings"
+          >
+            <svg class="icon"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+
+        <fieldset class="setting-group">
+          <legend class="setting-label">Theme</legend>
+          <div class="segmented" role="radiogroup" aria-label="Theme">
+            <label class="segmented__option">
+              <input type="radio" name="theme" value="system" />
+              <span>System</span>
+            </label>
+            <label class="segmented__option">
+              <input type="radio" name="theme" value="light" />
+              <span>Light</span>
+            </label>
+            <label class="segmented__option">
+              <input type="radio" name="theme" value="dark" />
+              <span>Dark</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="setting-row">
+          <div>
+            <label class="setting-label" for="contrast-toggle">High contrast</label>
+            <p class="setting-help">Use blue and orange tiles instead of green and gold.</p>
+          </div>
+          <input class="switch" type="checkbox" role="switch" id="contrast-toggle" />
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <label class="setting-label" for="motion-toggle">Reduce motion</label>
+            <p class="setting-help">Skip tile flips and shakes.</p>
+          </div>
+          <input class="switch" type="checkbox" role="switch" id="motion-toggle" />
+        </div>
+
+        <p class="note">Preferences are saved in this browser.</p>
+
+        <button
+          class="button button--primary button--wide"
+          type="button"
+          data-close-dialog
+        >
+          Done
+        </button>
+      </div>
+    </dialog>
+
+    <dialog class="modal modal--result" id="result-dialog" aria-labelledby="result-title">
+      <div class="modal__card receipt">
+        <div class="receipt__perf" aria-hidden="true"></div>
+
+        <div class="modal__head">
+          <h2 class="modal__title" id="result-title">Result</h2>
+          <button
+            class="icon-button"
+            type="button"
+            data-close-dialog
+            aria-label="Close result"
+          >
+            <svg class="icon"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+
+        <p class="receipt__meta" id="result-meta"></p>
+        <p class="receipt__answer" id="result-answer" hidden></p>
+
+        <div class="result-grid" id="result-grid" aria-hidden="true"></div>
+        <p class="receipt__note" id="receipt-status" role="status" aria-live="polite">
+          No letters. Safe to share.
+        </p>
+
+        <div class="receipt__actions">
+          <button class="button button--primary" type="button" id="share-button">
+            <svg class="icon"><use href="#icon-copy"></use></svg>
+            <span>Copy result</span>
+          </button>
+          <button class="button" type="button" id="result-stats-button">
+            Statistics
+          </button>
+        </div>
+
+        <div class="receipt__links" id="result-links">
+          <button class="text-button" type="button" id="practice-next" hidden>
+            New practice word
+          </button>
+          <button class="text-button" type="button" id="play-daily" hidden>
+            Back to daily
+          </button>
+        </div>
+
+        <p class="receipt__countdown" id="result-countdown"></p>
+        <div class="receipt__perf" aria-hidden="true"></div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <div class="noscript">
+        This game needs JavaScript. Enable it to play.
+      </div>
+    </noscript>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

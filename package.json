@@ -1,0 +1,13 @@
+{
+  "name": "wordle-clone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An independent, local-first Wordle clone built from observed game mechanics.",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python3 -m http.server 8080",
+    "words": "python3 scripts/build-words.py",
+    "words:check": "python3 scripts/build-words.py --check"
+  }
+}
